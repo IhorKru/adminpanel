@@ -1,5 +1,5 @@
     $('#input_partnername').on('change', function() {
-        if ( this.value == '5'){
+        if (this.value == '5'){
             $("#usergeo").show();
             $("#resourcename").hide();
             $("#templatename").hide();
