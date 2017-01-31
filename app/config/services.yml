@@ -1,0 +1,17 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/service_container.html
+parameters:
+#    parameter_name: value
+
+services:
+      api.adk:
+          class: AppBundle\Services\ADKController
+          calls:
+            - [setContainer, ["@service_container"]]
+      gen.campaign:
+          class: AppBundle\Services\CampaignController
+          calls:
+            - [setContainer, ["@service_container"]]
+#    service_name:
+#        class: AppBundle\Directory\ClassName
+#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
