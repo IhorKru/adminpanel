@@ -343,7 +343,7 @@ class StatsRecalculation extends Controller
         $currweek = date("W");
         $currday = date("d");
 
-        $weeklystats = $em->getRepository('AppBundle:StatsWeekly')->findOneBy(['year' => $curryear, 'month' => $currmonth, 'week' => $currweek]);
+        $weeklystats = $em->getRepository('AppBundle:StatsWeekly')->findOneBy(['year' => $curryear, 'week' => $currweek]);
 
         if (!$weeklystats) {
             $newWeeklystats ->setYear($curryear);
@@ -367,7 +367,7 @@ class StatsRecalculation extends Controller
             $em->persist($newWeeklystats);
             $em->flush();
         } else {
-            $newWeeklystats = $em->getRepository('AppBundle:StatsWeekly')->findOneBy(['year' => $curryear, 'month' => $currmonth, 'week' => $currweek]);
+            $newWeeklystats = $em->getRepository('AppBundle:StatsWeekly')->findOneBy(['year' => $curryear, 'week' => $currweek]);
             $newWeeklystats ->setDay($currday);
             $newWeeklystats ->setDate(new DateTime());
             $newWeeklystats ->setSubscribers($netsubscribers);
