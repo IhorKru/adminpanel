@@ -34,7 +34,7 @@ class ADKController extends AdminController
         $url = 'http://integrated.adstation.com/1.3';
         $idomain = 'adk.mediaff.com';
         $cdomain = 'adk.mediaff.com';
-
+        
         /*$randnum = rand(0,1);
 
         # define click and image domains based on resource id
@@ -396,7 +396,7 @@ class ADKController extends AdminController
                         $sendySubscriber ->setBounced('0');
                         $sendySubscriber ->setBounceSoft('0');
                         $sendySubscriber ->setComplaint('0');
-                        $sendySubscriber ->setLastCampaign($depdate->format("U"));
+                        $sendySubscriber ->setLastCampaign(strtotime($depdate));
                         $sendySubscriber ->setTimestamp(new DateTime());
                         $sendySubscriber ->setJoinDate($subscriptiondate);
                         $sendySubscriber ->setConfirmed('1');
