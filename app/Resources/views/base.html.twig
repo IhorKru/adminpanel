@@ -11,10 +11,9 @@
             <link href="{{ asset('resources/vendors_new/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
             <!-- Font Awesome -->
             <link href="{{ asset('resources/vendors_new/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+            {% block custcss %} {% endblock %}
             <!-- Custom Theme Style -->
             <link href="{{ asset('resources/build/css/custom.min.css') }}" rel="stylesheet">
-
-            {% block custcss %} {% endblock %}
 
         {% endblock %}
 

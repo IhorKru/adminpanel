@@ -732,7 +732,7 @@ a:hover, a:focus {
   min-width: 70px; }
 
 .panel_toolbox > li {
-  float: right;
+  float: left;
   cursor: pointer; }
 
 .panel_toolbox > li > a {
