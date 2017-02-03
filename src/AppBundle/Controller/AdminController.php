@@ -463,17 +463,16 @@ class AdminController extends Controller
     /**
     * @Route("/newemailtempl", name="newemailtempl")
     */
-    public function emailtempAction(Request $request){
+    public function newemailtemplAction(Request $request){
         
         $newTemplate = new Template();
         
         $form2 = $this->createForm(NewEmailType::class, $newTemplate, [
             'action' => $this -> generateUrl('newemailtempl'),
-            'method' => 'POST',
-            'slug' => 'newemailtempl'
+            'method' => 'POST'
         ]);
         
-        if($form2->isSubmitted() && $form->isValid()) {
+        if($form2->isSubmitted() && $form2->isValid()) {
             
         }
         
