@@ -43,6 +43,7 @@ class NewEmailType extends AbstractType{
                 'error_bubbling' => true,
                 'attr' => [
                     'placeholder' => 'Drop files here to upload',
+                    'action' => 'newemailtemplate.html.twig',
                     'class' => 'form-control dropzone'
                 ]])
             ->add('submit', SubmitType::class, [
@@ -65,6 +66,6 @@ class NewEmailType extends AbstractType{
      * @return string
      */
     public function getName() {
-        return 'contact';
+        return 'newemail';
     }
 }

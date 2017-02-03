@@ -28,7 +28,7 @@
                                     <div class="col-md-9 col-sm-9 col-xs-9 col-xs-9-ex">
                                         <div class='input-group fieldsep'>
                                              <span class="input-group-addon">
-                                                <span class="glyphicon glyphicon-thumbs-up"></span>
+                                                <span class="glyphicon glyphicon-picture"></span>
                                              </span>
                                             {{ form_widget(form.app) }}
                                         </div>
@@ -38,7 +38,7 @@
                                     <div class="col-md-9 col-sm-9 col-xs-9 col-xs-9-ex">
                                         <div class='input-group fieldsep'>
                                              <span class="input-group-addon">
-                                                <span class="glyphicon glyphicon-thumbs-up"></span>
+                                                <span class="glyphicon glyphicon-list-alt"></span>
                                              </span>
                                             {{ form_widget(form.template_name) }}
                                         </div>
@@ -60,7 +60,11 @@
                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                   <div class="x_panel">
                                     <div class="x_content">
-                                        <form action="form_upload.html" class="dropzone"></form>
+                                        <div class="form-group">    
+                                            <div class="col-md-9 col-sm-9 col-xs-9 col-xs-9-ex">
+                                                <form action="form_upload.html" class="dropzone"></form>
+                                            </div>
+                                        </div>    
                                     </div>
                                   </div>
                                 </div>
@@ -72,7 +76,7 @@
     </div>
     {% block custjs %}
     <!-- Dropzone.js -->
-    <script src="{{ asset('resources/vendors_new/dropzone-4.3.0/dist/dropzone.js')}}"></script>   
+    <script src="{{ asset('resources/vendors_new/dropzone-4.3.0/dist/dropzone.js')}}"></script>
     {% endblock %}
     
 {% endblock %}
