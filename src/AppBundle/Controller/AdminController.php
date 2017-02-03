@@ -4,7 +4,9 @@ namespace AppBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\CampaignInputDetails;
+use AppBundle\Entity\Template;
 use AppBundle\Form\InputType;
+use AppBundle\Form\NewEmailType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class AdminController extends Controller
@@ -462,8 +464,16 @@ class AdminController extends Controller
      */
      public function newemailtemplateAction(Request $request){
         
-         
-        return $this->render('BackEnd/newemailtemplate.html.twig');
+        $newTemplate = new Template();
+        
+        $form = $this->createForm(NewEmailType::class, $newTemplate, [
+            'action' => $this -> generateUrl('newemailtemplate'),
+            'method' => 'POST'
+        ]);
+        
+        return $this->render('BackEnd/newemailtemplate.html.twig',[
+            'form'=>$form->createView()
+        ]);
          
      }
 }

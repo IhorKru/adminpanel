@@ -6,10 +6,11 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class NewEmailTemp extends AbstractType{
+class NewEmailType extends AbstractType{
     /**
      * @param FormBuilderInterface $builder
      * @param array                $options
@@ -36,20 +37,22 @@ class NewEmailTemp extends AbstractType{
                     'placeholder' => 'Template Name',
                     'class' => 'form-control'
                 ]])
-            ->add('htmltext', FileType::class, [
+            ->add('htmltext', TextType::class, [
                 'label' => false,
-                'required' => true,
+                'required' => false,
                 'error_bubbling' => true,
                 'attr' => [
-                    'placeholder' => 'Temaplate',
-                    'class' => 'form-control'
+                    'placeholder' => 'Drop Template Here',
+                    'class' => 'dropzone form-control'
                 ]])
             ->add('submit', SubmitType::class, [
-                'label' => 'Upload',
+                'label' => 'Create Template',
                 'attr' => [
                     'class' => 'btn btn-success btn-block'
                 ]])
         ;
+        
+        
     }
     
     /**
