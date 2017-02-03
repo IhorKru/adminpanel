@@ -3,7 +3,7 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -28,6 +28,27 @@ class NewEmailTemp extends AbstractType{
                     'class' => 'form-control'
                 ]
             ])
+            ->add('template_name', TextType::class, [
+                'label' => false,
+                'required' => true,
+                'error_bubbling' => true,
+                'attr' => [
+                    'placeholder' => 'Template Name',
+                    'class' => 'form-control'
+                ]])
+            ->add('htmltext', FileType::class, [
+                'label' => false,
+                'required' => true,
+                'error_bubbling' => true,
+                'attr' => [
+                    'placeholder' => 'Temaplate',
+                    'class' => 'form-control'
+                ]])
+            ->add('submit', SubmitType::class, [
+                'label' => 'Upload',
+                'attr' => [
+                    'class' => 'btn btn-success btn-block'
+                ]])
         ;
     }
     
@@ -35,9 +56,9 @@ class NewEmailTemp extends AbstractType{
     * @param OptionsResolverInterface $resolver
     */
     public function configureOptions(OptionsResolver $resolver) {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'data_class' => 'AppBundle\Entity\Template'
-        ));
+        ]);
     }
     /**
      * @return string

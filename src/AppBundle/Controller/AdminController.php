@@ -456,5 +456,14 @@ class AdminController extends Controller
             'form'=>$form->createView()
         ]);
     }
-
+    
+     /**
+     * @Route("/newemailtemplate", name="newemailtemplate")
+     */
+     public function newemailtemplateAction(Request $request){
+        
+         
+        return $this->render('BackEnd/newemailtemplate.html.twig');
+         
+     }
 }
