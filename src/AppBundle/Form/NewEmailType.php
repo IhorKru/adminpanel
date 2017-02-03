@@ -43,7 +43,7 @@ class NewEmailType extends AbstractType{
                 'error_bubbling' => true,
                 'attr' => [
                     'placeholder' => 'Drag file here',
-                    'action' => 'newemailtemplate.html.twig',
+                    'action' => 'newemailtempl.html.twig',
                     'class' => 'form-control dropzone'
                 ]])
             ->add('submit', SubmitType::class, [

@@ -3,12 +3,13 @@
 namespace AppBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Entity\CampaignInputDetails;
 use AppBundle\Entity\Template;
 use AppBundle\Form\InputType;
 use AppBundle\Form\NewEmailType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
 class AdminController extends Controller
 {
     /**
@@ -459,21 +460,26 @@ class AdminController extends Controller
         ]);
     }
     
-     /**
-     * @Route("/newemailtemplate", name="newemailtemplate")
-     */
-     public function newemailtemplateAction(Request $request){
+    /**
+    * @Route("/newemailtempl", name="newemailtempl")
+    */
+    public function emailtempAction(Request $request){
         
         $newTemplate = new Template();
         
-        $form = $this->createForm(NewEmailType::class, $newTemplate, [
-            'action' => $this -> generateUrl('newemailtemplate'),
-            'method' => 'POST'
+        $form2 = $this->createForm(NewEmailType::class, $newTemplate, [
+            'action' => $this -> generateUrl('newemailtempl'),
+            'method' => 'POST',
+            'slug' => 'newemailtempl'
         ]);
         
-        return $this->render('BackEnd/newemailtemplate.html.twig',[
-            'form'=>$form->createView()
+        if($form2->isSubmitted() && $form->isValid()) {
+            
+        }
+        
+        return $this->render('BackEnd/newemailtempl.html.twig',[
+            'form'=>$form2->createView()
         ]);
          
-     }
+    }
 }
