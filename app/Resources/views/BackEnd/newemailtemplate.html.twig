@@ -56,6 +56,15 @@
                                 </div>
                             </div>
                             {{ form_end(form) }}
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                  <div class="x_panel">
+                                    <div class="x_content">
+                                        <form action="form_upload.html" class="dropzone"></form>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                     </div>
                 </div>
             </div>
@@ -63,7 +72,7 @@
     </div>
     {% block custjs %}
     <!-- Dropzone.js -->
-    <script src="{{ asset('resources/vendors_new/dropzone-4.3.0/dist/min/dropzone.min.js')}}"></script>   
+    <script src="{{ asset('resources/vendors_new/dropzone-4.3.0/dist/dropzone.js')}}"></script>   
     {% endblock %}
     
 {% endblock %}
