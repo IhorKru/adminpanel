@@ -30,7 +30,6 @@
                                              <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-thumbs-up"></span>
                                              </span>
-                                            {{ form_label(form.app) }}
                                             {{ form_widget(form.app) }}
                                         </div>
                                     </div>
@@ -41,14 +40,12 @@
                                              <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-thumbs-up"></span>
                                              </span>
-                                            {{ form_label(form.template_name) }}
                                             {{ form_widget(form.template_name) }}
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" >
                                     <div class="col-md-9 col-sm-9 col-xs-9 col-xs-9-ex">
-                                        {{ form_label(form.htmltext) }}
                                         {{ form_widget(form.htmltext) }}
                                     </div>
                                 </div>
@@ -66,7 +63,6 @@
         </div>
     </div>
     {% block custjs %}
-    
     <!-- Dropzone.js -->
     <script src="{{ asset('resources/vendors_new/dropzone-4.3.0/dist/dropzone.js')}}"></script>   
     {% endblock %}

@@ -42,7 +42,7 @@ class NewEmailType extends AbstractType{
                 'required' => false,
                 'error_bubbling' => true,
                 'attr' => [
-                    'placeholder' => 'Drop Template Here',
+                    'placeholder' => 'Drop files here to upload',
                     'action' => 'newemailtemplate.html.twig',
                     'class' => 'form-control dropzone'
                 ]])
@@ -52,8 +52,6 @@ class NewEmailType extends AbstractType{
                     'class' => 'btn btn-success btn-block'
                 ]])
         ;
-        
-        
     }
     
     /**

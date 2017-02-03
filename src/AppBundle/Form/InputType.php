@@ -4,6 +4,7 @@ namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\ResetType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TimezoneType;
 use Symfony\Component\Form\Extension\Core\Type\CountryType;
@@ -110,7 +111,7 @@ class InputType extends AbstractType {
                 'attr' => [
                     'class' => 'btn btn-success btn-block'
                 ]])
-            ->add('clear', SubmitType::class, [
+            ->add('clear', ResetType::class, [
                 'label' => 'Clear Fields',
                 'attr' => [
                     'class' => 'btn btn-danger btn-block'
