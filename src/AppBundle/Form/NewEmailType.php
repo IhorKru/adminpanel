@@ -39,10 +39,9 @@ class NewEmailType extends AbstractType{
                 ]])
             ->add('htmltext', TextType::class, [
                 'label' => false,
-                'required' => false,
+                'required' => true,
                 'error_bubbling' => true,
                 'attr' => [
-                    'placeholder' => 'Drop files here to upload',
                     'action' => 'newemailtemplate.html.twig',
                     'class' => 'form-control dropzone'
                 ]])
