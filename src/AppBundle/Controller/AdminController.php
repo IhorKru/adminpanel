@@ -467,17 +467,21 @@ class AdminController extends Controller
         
         $newTemplate = new Template();
         
-        $form2 = $this->createForm(NewEmailType::class, $newTemplate, [
+        $form = $this->createForm(NewEmailType::class, $newTemplate, [
             'action' => $this -> generateUrl('newemailtempl'),
             'method' => 'POST'
         ]);
         
-        if($form2->isSubmitted() && $form2->isValid()) {
+        if($form->isSubmitted() && $form->isValid()) {
+            $app = $form['app']->getData();
+            $tempname = $form['template_name']->getData();
+            $htmltext = $form['htmltext']->getData();
+            
             
         }
         
         return $this->render('BackEnd/newemailtempl.html.twig',[
-            'form'=>$form2->createView()
+            'form'=>$form->createView()
         ]);
          
     }
