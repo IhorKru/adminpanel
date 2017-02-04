@@ -466,17 +466,31 @@ class AdminController extends Controller
     public function newemailtemplAction(Request $request){
         
         $newTemplate = new Template();
+        $em = $this ->getDoctrine() ->getManager();
         
         $form = $this->createForm(NewEmailType::class, $newTemplate, [
             'action' => $this -> generateUrl('newemailtempl'),
             'method' => 'POST'
         ]);
         
+        $form->handleRequest($request);
+        
         if($form->isSubmitted() && $form->isValid()) {
-            $app = $form['app']->getData();
+            $appobj = $form['app']->getData();
+                $app = $appobj ->getID();
             $tempname = $form['template_name']->getData();
             $htmltext = $form['htmltext']->getData();
             
+            $queryli = $em ->createQuery('SELECT MAX(li.id) FROM AppBundle:Template li');
+            $newTemplate ->setId($queryli->getSingleScalarResult() + 1);
+            $newTemplate ->setApp($app);
+            $newTemplate ->setTemplateName($tempname);
+            
+            
+            $em->persist($newTemplate);
+            $em->flush();
+            
+            print_r($htmltext);
             
         }
         
