@@ -479,18 +479,16 @@ class AdminController extends Controller
             $appobj = $form['app']->getData();
                 $app = $appobj ->getID();
             $tempname = $form['template_name']->getData();
-            $htmltext = $form['htmltext']->getData();
+            $file = $form['htmltext']->getData();
+                $htmlText = file_get_contents($file->getPathname());
             
             $queryli = $em ->createQuery('SELECT MAX(li.id) FROM AppBundle:Template li');
             $newTemplate ->setId($queryli->getSingleScalarResult() + 1);
             $newTemplate ->setApp($app);
             $newTemplate ->setTemplateName($tempname);
+            $newTemplate ->setHtmlText($htmlText);
             
-            
-            $em->persist($newTemplate);
-            $em->flush();
-            
-            print_r($htmltext);
+            print_r($htmlText);
             
         }
         
