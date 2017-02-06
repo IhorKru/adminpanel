@@ -39,6 +39,7 @@ class NewEmailType extends AbstractType{
                     'class' => 'form-control'
                 ]])
             ->add('htmltext', FormType::class, [
+                'data_class' => FileType::class,
                 'label' => false,
                 'required' => true,
                 'error_bubbling' => true,
