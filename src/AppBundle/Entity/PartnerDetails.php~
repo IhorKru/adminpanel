@@ -1,0 +1,40 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * PartnerDetails
+ *
+ * @ORM\Table(name="p_01_partner_details", uniqueConstraints={@ORM\UniqueConstraint(name="partner_pkey", columns={"id"})} )
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\PartnerDetailsRepository")
+ */
+class PartnerDetails
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="partner_name", type="string", length=255)
+     */
+    private $partner_name;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_created", type="datetime")
+     */
+    private $date_created;
+
+
+}
+
