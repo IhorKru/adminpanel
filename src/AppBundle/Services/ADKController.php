@@ -252,7 +252,11 @@ class ADKController extends AdminController
                     #assigning template based on the category id, provided by ADK
                     #getting app details
                     $adkcategory = $adkcategoryrepo->findOneBy(['categoryid' => $categoryid]);
-                        $app = $adkcategory ->getAppId();
+                        if(is_null($adkcategory)) {
+                            $app = '8';
+                        } else {
+                            $app = $adkcategory ->getAppId();
+                        }
                     #getting app name/sent from email address
                     $appdetails = $sendyappdetails->findOneBy(['id' => $app]);
                         $appname = $appdetails->getAppName();
@@ -343,7 +347,11 @@ class ADKController extends AdminController
                 $categoryid = $adkoffer->getCategoryid();
                 #selecting correct app id
                 $adkcategory = $adkcategoryrepo->findOneBy(['categoryid' => $categoryid]);
-                    $app = $adkcategory ->getAppId();
+                        if(is_null($adkcategory)) {
+                            $app = '8';
+                        } else {
+                            $app = $adkcategory ->getAppId();
+                        }
                 $appdetails = $sendyappdetails->findOneBy(['id' => $app]);
                     $appfromname = $appdetails ->getFromName();
                     $appfromemail = $appdetails ->getFromEmail();

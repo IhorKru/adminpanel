@@ -38,14 +38,13 @@ class NewEmailType extends AbstractType{
                     'placeholder' => 'Template Name',
                     'class' => 'form-control'
                 ]])
-            ->add('htmltext', FormType::class, [
-                'data_class' => FileType::class,
+            ->add('htmltext', FileType::class, [
                 'label' => false,
                 'required' => true,
                 'error_bubbling' => true,
                 'attr' => [
                     'action' => 'newemailtempl',
-                    'class' => 'form-control dropzone'
+                    'class' => 'form-control'
                 ]])
             ->add('submit', SubmitType::class, [
                 'label' => 'Create Template',

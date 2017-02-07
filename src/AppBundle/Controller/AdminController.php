@@ -484,11 +484,17 @@ class AdminController extends Controller
             
             $queryli = $em ->createQuery('SELECT MAX(li.id) FROM AppBundle:Template li');
             $newTemplate ->setId($queryli->getSingleScalarResult() + 1);
+            $newTemplate ->setUserid('1');
             $newTemplate ->setApp($app);
             $newTemplate ->setTemplateName($tempname);
             $newTemplate ->setHtmlText($htmlText);
             
-            print_r($htmlText);
+            $em->persist($newTemplate);
+            $em->flush();
+            
+            return $this->render('BackEnd/newemailtempl.html.twig',[
+                'form'=>$form->createView()
+            ]);
             
         }
         
