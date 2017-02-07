@@ -9,7 +9,7 @@ services:
           calls:
             - [setContainer, ["@service_container"]]
       gen.campaign:
-          class: AppBundle\Services\StatsController
+          class: AppBundle\Services\CampaignController
           calls:
             - [setContainer, ["@service_container"]]
 #    service_name:
