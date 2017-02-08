@@ -1,6 +1,0 @@
-97b4ef,127.0.0.1,GET,http://localhost/mediaff_admin/web/app_dev.php/emailcampaigns,1486544046,,200
-79ae71,127.0.0.1,GET,http://localhost/mediaff_admin/web/app_dev.php/login,1486544050,,200
-424742,127.0.0.1,POST,http://localhost/mediaff_admin/web/app_dev.php/login,1486544057,,302
-8c6d0b,127.0.0.1,GET,http://localhost/mediaff_admin/web/app_dev.php/,1486544058,1c5f78,200
-1c5f78,127.0.0.1,GET,http://localhost/mediaff_admin/web/app_dev.php/,1486544058,,500
-77c331,127.0.0.1,GET,http://localhost/mediaff_admin/web/app_dev.php/emailcampaigns,1486544064,,200
