@@ -1,0 +1,10 @@
+de74e2,127.0.0.1,GET,http://localhost/mediaff_admin/web/app_dev.php/emailcampaigns,1486481806,,200
+7a2797,127.0.0.1,GET,http://localhost/mediaff_admin/web/app_dev.php/dailystats,1486488209,,302
+e9b92f,127.0.0.1,GET,http://localhost/mediaff_admin/web/app_dev.php/login,1486488210,,200
+4534d5,127.0.0.1,POST,http://localhost/mediaff_admin/web/app_dev.php/login,1486488214,,302
+a9c9d3,127.0.0.1,GET,http://localhost/mediaff_admin/web/app_dev.php/dailystats,1486488227,,200
+64b088,127.0.0.1,GET,http://localhost/mediaff_admin/web/app_dev.php/weeklystats,1486488297,,200
+aa58ee,127.0.0.1,GET,http://localhost/mediaff_admin/web/app_dev.php/emailcampaigns,1486488906,,200
+327c8d,127.0.0.1,GET,http://localhost/mediaff_admin/web/app_dev.php/newemailtempl,1486488911,,200
+56e44c,127.0.0.1,GET,http://localhost/mediaff_admin/web/app_dev.php/newemailtempl,1486488982,,200
+7fac00,127.0.0.1,GET,http://localhost/mediaff_admin/web/app_dev.php/emailcampaigns,1486488984,,200
