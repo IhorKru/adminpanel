@@ -1,6 +1,7 @@
 <?php
 
 namespace AppBundle\Controller;
+
 use AppBundle\Entity\User;
 use AppBundle\Form\LoginType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;

@@ -5,7 +5,7 @@
 !/var/cache
 /var/cache/*
 !var/cache/.gitkeep
-!/var/logs
+/var/logs
 /var/logs/*
 !var/logs/.gitkeep
 !/var/sessions
@@ -14,8 +14,13 @@
 !var/SymfonyRequirements.php
 /vendor/
 /web/bundles/
-/nbproject/private/
-# Elastic Beanstalk Files
-.elasticbeanstalk/*
-!.elasticbeanstalk/*.cfg.yml
-!.elasticbeanstalk/*.global.yml
+/nbproject/private/
+
+# Elastic Beanstalk Files
+
+.elasticbeanstalk/*
+
+!.elasticbeanstalk/*.cfg.yml
+
+!.elasticbeanstalk/*.global.yml
+
